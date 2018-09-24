@@ -22,12 +22,6 @@ spec:
         ports:
         - containerPort: 5432
         env:
-        - name: POSTGRES_USER
-          value: pgbench
-        - name: POSTGRES_PASSWORD
-          value: superpostgres
-        - name: PGBENCH_PASSWORD
-          value: superpostgres
         - name: PGDATA
           value: /var/lib/postgresql/data/pgdata
         volumeMounts:
