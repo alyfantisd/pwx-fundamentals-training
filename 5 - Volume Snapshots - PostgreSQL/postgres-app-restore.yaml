@@ -29,12 +29,21 @@ spec:
                 - "false"
       containers:
       - name: postgres
-        image: postgres:latest
+        image: postgres:9.5
         imagePullPolicy: "IfNotPresent"
         ports:
         - containerPort: 5432
         env:
+        - name: POSTGRES_USER
+          value: pgbench
+        - name: PGUSER
+          value: pgbench
         - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-pass
+              key: password.txt
+        - name: PGBENCH_PASSWORD
           value: superpostgres
         - name: PGDATA
           value: /var/lib/postgresql/data/pgdata
