@@ -1,8 +1,5 @@
 # Volume Snapshots - PostgreSQL
 
-### Curl the snapshot spec
-`master $ curl -Lo px-snap.yaml https://git.io/fAfJE`
-
 ### Apply the spec
 `master $ kubectl create -f px-snap.yaml`
 
@@ -55,17 +52,11 @@ select count(*) from pgbench_accounts;
 (1 row)
 ```
 
-### Curl the restore spec
-`master $ curl -Lo px-snap-pvc.yaml https://git.io/fAfTf`
-
 ### Apply the restore spec
 `master $ kubectl create -f px-snap-pvc.yaml`
 
 ### View the created PVCs
 `master $ kubectl get pvc`
-
-### Curl the new Postgres deploy spec
-`master $ curl -Lo postgres-app-restore.yaml https://git.io/fAfTi`
 
 ### Apply the spec
 `master $ kubectl apply -f postgres-app-restore.yaml`
