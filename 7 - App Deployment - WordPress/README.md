@@ -1,11 +1,5 @@
 # App Deployment - WordPress
 
-### Retrieve MySQL spec for SC and PVC
-`master $ curl -Lo mysql-vol.yaml https://git.io/fAfwx`
-
-### Retrieve WordPress spec for SC and PVC
-`master $ curl -Lo wp-vol.yaml https://git.io/fAfry`
-
 ### Apply both specs
 `master $ kubectl apply -f mysql-vol.yaml`
 `master $ kubectl apply -f wp-vol.yaml`
