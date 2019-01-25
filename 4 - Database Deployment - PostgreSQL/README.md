@@ -1,16 +1,10 @@
 # Database Deployment - PostgreSQL
 
-### Retrieve the Postgres Storage Class
-`master $ curl -Lo px-postgres-sc.yaml https://git.io/fNSoP`
-
 ### Apply the spec
 `master $ kubectl apply -f px-postgres-sc.yaml`
 
 ### Check the Storage Class exists
 `master $ kubectl get sc`
-
-### Retrieve the Postgres Persistent Volume Claim
-`master $ curl -Lo px-postgres-pvc.yaml https://git.io/fA4g2`
 
 ### Apply the spec
 `master $ kubectl apply -f px-postgres-pvc.yaml`
@@ -18,9 +12,7 @@
 ### Check the PVC exists
 `master $ kubectl get pvc`
 
-### Retrieve the Postgres Deployment Spec
-`master $ curl -Lo px-postgres-app.yaml https://git.io/fNSix`
-
+### View the Postgres Deployment Spec
 ```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
