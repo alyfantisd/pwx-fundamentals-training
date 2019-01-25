@@ -1,7 +1,7 @@
 # Installing Portworx
 
 ### Portworx spec generator
-https://install.portworx.com/1.5/
+https://install.portworx.com
 
 ### Values for the install generator
 
