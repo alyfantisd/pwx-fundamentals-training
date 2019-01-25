@@ -67,9 +67,6 @@ spec:
 ### Exec into the Postgres pod
 `master $ kubectl exec -it $POD bash`
 
-### Change to the postgres user
-`su -s /bin/bash postgres`
-
 ### Database ops
 ```
 psql
@@ -138,9 +135,6 @@ exit
 `master $ kubectl exec -it postgres-<something> bash`
 
 ### Verify the data still exists
-```
-su -s /bin/bash postgres
-```
 ```
 psql pxdemo
 ```
