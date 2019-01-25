@@ -9,10 +9,10 @@
 `master $ kubectl get pvc`
 
 ### Apply MySQL deployment
-`kubectl apply -f https://git.io/fAfoq`
+`kubectl apply -f mysql-deploy.yaml`
 
 ### Apply WordPress deployment
-`kubectl apply -f https://git.io/fAfoB`
+`kubectl apply -f wp-deploy.yaml`
 
 ### Get WordPress Pod ID
 `kubectl get pods`
