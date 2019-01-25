@@ -6,10 +6,16 @@ node01 $ pxctl volume create objectstorevol --size 10
 Volume successfully created: 539767001152046527
 ```
 
-### Start the object store with the created volume
+### Create the object store with the created volume
 ```
 node01 $ pxctl objectstore create -v objectstore vol
 Successfully created object store
+```
+
+### Start the object store
+```
+node01 $ sudo pxctl objectstore enable
+Successfully updated object store
 ```
 
 ### Check ObjectStore status
