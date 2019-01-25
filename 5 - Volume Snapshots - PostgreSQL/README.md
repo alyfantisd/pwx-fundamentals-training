@@ -8,7 +8,7 @@ Exec into the pod
 `master $ kubectl exec -it <postgres-pod> bash`
 
 ```bash
-$ su -s /bin/bash postgres
+
 $ psql
 drop database pxdemo;
 \l
@@ -39,7 +39,7 @@ master $ kubectl get pods
 `master $ kubectl exec -it <postgres-pod> bash`
 
 ```bash
-$ su -s /bin/bash postgres
+
 psql pxdemo
 
 \dt
@@ -68,7 +68,7 @@ select count(*) from pgbench_accounts;
 `master $ kubectl exec -it postgres-snap-<id> bash`
 
 ```bash
-$ su -s /bin/bash postgres
+
 $ psql pxdemo
 # \dt
 # select count(*) from pgbench_accounts;
