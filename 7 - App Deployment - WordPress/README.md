@@ -1,12 +1,16 @@
 # App Deployment - WordPress
 
 ### Apply both specs
-`master $ kubectl apply -f mysql-vol.yaml`
-`master $ kubectl apply -f wp-vol.yaml`
+```
+master $ kubectl apply -f mysql-vol.yaml
+master $ kubectl apply -f wp-vol.yaml
+```
 
 ### Verify creation
-`master $ kubectl get sc`
-`master $ kubectl get pvc`
+```
+master $ kubectl get sc
+master $ kubectl get pvc
+```
 
 ### Apply MySQL deployment
 `kubectl apply -f mysql-deploy.yaml`
