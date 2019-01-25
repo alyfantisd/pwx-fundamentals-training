@@ -1,16 +1,16 @@
 # Cloud Snapshots - PostgreSQL
 
-### Explore ObjectStore options
-`node01 $ pxctl objectstore`
+### Create a backing volume for the objectstore
+```
+node01 $ pxctl volume create objectstorevol --size 10
+Volume successfully created: 539767001152046527
+```
 
-### Create the ObjectStore
-`node01 $ pxctl objectstore create --size 5`
-
-### View ObjectStore volumes
-`node01 $ pxctl volume list`
-
-### Start the ObjectStore
-`node01 $ sudo pxctl objectstore start`
+### Start the object store with the created volume
+```
+node01 $ pxctl objectstore create -v objectstore vol
+Successfully created object store
+```
 
 ### Check ObjectStore status
 `node01 $ pxctl objectstore status`
