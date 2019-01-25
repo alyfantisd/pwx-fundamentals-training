@@ -22,7 +22,7 @@ master $ kubectl get pvc
 `kubectl get pods`
 
 ### Replace WordPress theme header file
-`master $ kubectl exec <pod> -- curl -o wp-content/themes/twentyfifteen/header.php https://git.io/fAfod`
+`master $ kubectl exec <pod> -- curl -Lo wp-content/themes/twentyfifteen/header.php https://git.io/fAfod`
 
 ### Scale WordPress deployment
 `master $ kubectl scale --replicas=15 deployment/wordpress`
