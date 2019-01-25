@@ -8,7 +8,7 @@ Volume successfully created: 539767001152046527
 
 ### Create the object store with the created volume
 ```
-node01 $ pxctl objectstore create -v objectstore vol
+node01 $ pxctl objectstore create -v objectstorevol
 Successfully created object store
 ```
 
