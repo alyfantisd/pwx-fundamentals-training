@@ -1,7 +1,9 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres-snap
+  labels:
+    app: postgres-snap
 spec:
   strategy:
     rollingUpdate:
@@ -9,6 +11,9 @@ spec:
       maxUnavailable: 1
     type: RollingUpdate
   replicas: 1
+  selector:
+    matchLabels:
+      app: postgres-snap
   template:
     metadata:
       labels:
@@ -46,8 +51,8 @@ spec:
           value: /var/lib/postgresql/data/pgdata
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: postgredb
+          name: postgres-data-from-snap
       volumes:
-      - name: postgredb
+      - name: postgres-data-from-snap
         persistentVolumeClaim:
           claimName: px-postgres-snap-clone
