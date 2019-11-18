@@ -14,10 +14,12 @@
 
 ### View the Postgres Deployment Spec
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
+  labels:
+    app: postgres
 spec:
   strategy:
     rollingUpdate:
@@ -25,6 +27,9 @@ spec:
       maxUnavailable: 1
     type: RollingUpdate
   replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
   template:
     metadata:
       labels:
@@ -33,12 +38,14 @@ spec:
       schedulerName: stork
       containers:
       - name: postgres
-        image: postgres
+        image: postgres:9.5
         imagePullPolicy: "IfNotPresent"
         ports:
         - containerPort: 5432
         env:
         - name: POSTGRES_USER
+          value: pgbench
+        - name: PGUSER
           value: pgbench
         - name: POSTGRES_PASSWORD
           value: superpostgres
@@ -48,9 +55,9 @@ spec:
           value: /var/lib/postgresql/data/pgdata
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: postgredb
+          name: postgres-data
       volumes:
-      - name: postgredb
+      - name: postgres-data
         persistentVolumeClaim:
           claimName: postgres-data
 ```

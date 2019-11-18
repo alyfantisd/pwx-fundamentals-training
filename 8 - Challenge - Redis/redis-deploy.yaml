@@ -10,15 +10,16 @@ spec:
   selector:
     app: redis
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis
-
+  labels:
+    app: redis
 spec:
   selector:
     matchLabels:
-      app: redis  # has to match .spec.template.metadata.labels
+      app: redis
   template:
     metadata:
       labels:
